@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hola mundo :c</h1>
+    <script>
+//WHILE 10 veces
+        var i = 1;
+        while (i <= 10) {           
+            console.log('vamos en el numero' + i);
+            i++;
+        }
+
+//FOR 10 veces
+for ( i = 1; i <= 10; i++) {
+    console.log('numero' + i)
+}
+
+//FUNCION elevar al cuadrado
+var promptnumero = parseInt(prompt('Ingresa un numero'));
+function elevar_al_cuadrado (promptnumero) {
+    return (promptnumero * promptnumero);
+}
+var x = elevar_al_cuadrado(promptnumero);
+console.log(promptnumero + '*' + promptnumero + '=' + x);
+
+//DO WHILE usado con una funcion
+    const user = "Anto";
+    const pass = "123";
+
+    function solicitarAcceso(username, password) {
+        return (username !== user || password !== pass)
+        }
+
+        do {
+        alert('Te vamos a solicitar info');
+        var ingreseUser = prompt('Ingresa tu usuario');
+        var ingresePass = prompt('Ingresa tu contraseña');
+    } while (solicitarAcceso(ingreseUser, ingresePass))
+
+    alert('Bienvenido' + ingreseUser)
+
+//FOR, Suma y promedio        
+var numeracion = ("°");
+var suma = 0;
+
+for (i = 1; i <=5; i++) {
+    var resultado = prompt('Ingrese el' + '' + i + numeracion + '' + 'numero');
+    suma = suma + parseInt(resultado)    
+}
+   
+alert('La suma de los numero que ingresaste es' + suma)
+alert('El promedio de los numeros que ingresaste es' + suma / 5)
+
+//EDADES 
+        mayor_de_edad = 0;
+
+        function contar_edades(edades) {
+            return (ingrese_edad !== 0)
+        }
+
+        do {
+            var ingrese_edad = parseInt(prompt('Ingresa una edad'));
+            if (ingrese_edad >= 18) {
+                mayor_de_edad++
+            }
+        } while (contar_edades(ingrese_edad));
+
+        alert('Usted a ingresado' + mayor_de_edad + 'edades mayores a 18');
+//PROMEDIO CONDICIONAL 
+
+var conteo_promedio = 0;
+var suma = 0;
+function promedio (numeros) {
+    return (ingrese_num !== 0);
+}
+
+do {
+    var ingrese_num = parseInt(prompt('Ingresa un numero :)'));
+    if (ingrese_num >= 0 && ingrese_num <= 9) {
+        conteo_promedio++
+        suma = suma + parseInt(ingrese_num);  
+    }   
+} while(promedio(ingrese_num));
+
+alert('Promedio de los numeros de 1 cifra es' + suma / conteo_promedio);
+
+//PARES E IMPARES
+var conteo_pares = 0;
+var conteo_impares = 0;
+
+function numeros (num) {   
+    return(ingrese !== 0);
+}
+
+do {
+    var ingrese = parseInt(prompt('Ingresa un número'));
+    if (ingrese % 2) {
+    conteo_impares++
+    } else {
+    conteo_pares++
+}} while(numeros(ingrese));
+
+alert('Ingresaste' + conteo_pares + 'numeros pares y' + conteo_impares + 'numeros impares');
+
+//DE NUMEROS A LETRAS
+var numeros = prompt('Ingresa un numero para cambiarlo a letra :)');
+
+switch (numeros) {
+    case '1':
+        alert('A');
+    break;  
+    case '2':
+        alert('B');
+    break;  
+    case '3':
+        alert('C');
+    break;  
+    case '4':
+        alert('D');
+    break;  
+    case '5':
+        alert('E');
+    break;  
+    case '6':
+        alert('F');
+    break;  
+    case '7':
+        alert('G');
+    break;  
+    case '8':
+        alert('H');
+    break;
+    case '9':
+        alert('I');
+    break;  
+    case '10':
+        alert('J');
+    break;    
+    default: 
+    alert('ERROR');      
+}
+
+    </script>
+</body>
+
+</html>

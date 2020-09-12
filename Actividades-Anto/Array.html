@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hola mundo :)</h1>
+    <script>
+        /*
+        var conteo = ["Antonia","Nandar","Ramos","Valencia","Quesada"]
+
+        for (i = 0; i <=4; i++) {
+            console.log(conteo[i])
+        }
+
+        var i = 0;
+        var conteo = ["Lunes","Martes","Miercoles","Jueves","Viernes"]
+
+        while (i <= 4) {
+            console.log(conteo[i]);
+            i++;
+        }
+
+        //STOP
+
+        var datosIngresados = []
+
+        function condicion(num) {
+            return ingreseArray !== "stop";
+        }
+
+        do {
+            var ingreseArray = prompt('Ingresa un nuevo número');
+            datosIngresados.push(ingreseArray);
+        } while (condicion(ingreseArray));
+
+        datosIngresados.pop();
+        console.log(datosIngresados);*/
+
+
+        //DIVIDIR ARRAYS 
+        
+            var arrayImpares = [];
+            var arrayPares = [];
+            var arrayNoNumericos = [];
+
+            function condicion (num) {
+                    return valor !== 0;
+                }
+
+            do {
+                //let ingreseArray = prompt('ingrese lo que sea papi');
+                var valor =  parseInt(prompt('ingrese lo que sea papi'));
+                  if (isNaN(valor)) {
+                    //String(valor);
+                    var string = String(string);     
+                    arrayNoNumericos.push(string);                   
+                  } else {
+                    if (valor % 2){
+                        arrayImpares.push(valor);
+                    } else {
+                        arrayPares.push(valor);
+                    }  
+                  }
+            } while(condicion(valor));
+
+            arrayPares.pop();
+
+            console.log(arrayImpares);
+            console.log(arrayPares);
+            console.log(arrayNoNumericos);
+
+
+        /*
+            let ingrese = prompt('ingrese');
+            let valor = parseInt(ingrese);
+
+            if (isNaN(valor)){
+                alert('esto no es un numero')
+            } else {
+                if (ingrese % 2){
+                        //arraysPares.push(ingreseArray);
+                        alert('Esto es un numero impar');
+                    } else {
+                        //arrayImpares.push(ingreseArray);
+                        alert('Esto es un numreo par');
+                    }        
+            }*/
+    </script>
+</body>
+
+</html>
