@@ -8,8 +8,12 @@
 </head>
 
 <body>
-    <h1>Hola mundo :)</h1>
+    <h1>ARRAYS</h1>
+    <h2>Clase - 4 :)</h2>
     <script>
+
+//BITÁCORA
+
         /*
         var conteo = ["Antonia","Nandar","Ramos","Valencia","Quesada"]
 
@@ -90,6 +94,23 @@
                         alert('Esto es un numreo par');
                     }        
             }*/
+ 
+//CLASE ------    
+
+const arreglo = ['Hola', 4, true, 5, 'Mensaje', {}];
+      let suma = 0;
+      let arregloNoNumerico =[];
+
+      for( i = 0; i < arreglo.length; i++) {
+          let valor =  parseInt(arreglo[i])
+          if (isNaN(valor)) {
+              suma += valor //suma = suma + valor
+          } else {
+              arregloNoNumerico.push(arreglo[i]);
+          }
+      }
+      alert('La suma total da como resultado' + suma)
+      console.log(arregloNoNumerico);
     </script>
 </body>
 

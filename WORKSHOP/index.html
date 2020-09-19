@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <head>Bienvenido</head>
+    <main id="main"></main>
+    <script>
+        const crearProducto = (imgSrc, nombre, descripcion, precio) => {
+
+            //imagen
+            let imagen = document.createElement('div');
+            imagen.classList.add('imagen');
+            let img = document.createElement('img');
+
+            img.setAttribute('src', imgSrc);
+
+            imagen.appendChild(img);
+            //detalle
+            let detalle = document.createElement('div');
+            detalle.classList.add('detalle');
+
+            let eNombre = document.createElement('label');
+            eNombre.textContent = `Nombre: ${nombre}`;
+            let eDescripcion = document.createElement('label');
+            eDescripcion.textContent = `Descripcion: ${descripcion}`;
+            let ePrecio = document.createElement('label');
+            ePrecio.textContent = `Precio: ${precio}`;
+
+            detalle.appendChild(eNombre);
+            detalle.appendChild(eDescripcion);
+            detalle.appendChild(ePrecio);
+
+            //agregar
+            let agregar = document.createElement('div');
+            agregar.classList.add('agregar');
+
+
+
+            //
+            let producto = document.createElement('div');
+            producto.appendChild(imagen);
+            producto.appendChild(detalle);
+            producto.appendChild(agregar);
+
+            return producto;
+
+
+        }
+
+        const productos = [{
+                src: 'https://assets.adidas.com/images/w_385,h_385,f_auto,q_auto:sensitive,fl_lossy/7a44b368c7a44af69accabac0099f4d1_9366/tenis-galaxy-5.jpg',
+                nombre: 'TENIS GALAXY 5',
+                descripcion: 'Hombre running',
+                precio: '$199.990'
+            },
+            {
+                src: 'https://assets.adidas.com/images/w_385,h_385,f_auto,q_auto:sensitive,fl_lossy/158058bae4f04577af30abce00fcae9f_9366/tenis-phosphere.jpg',
+                nombre: 'TENIS PHOSPHERE',
+                descripcion: 'Hombre Sport Inspired',
+                precio: '$259.990'
+            },
+            {
+                src: 'https://assets.adidas.com/images/w_385,h_385,f_auto,q_auto:sensitive,fl_lossy/9710335f7927491b9c63abac009a02f4_9366/tenis-galaxy-5.jpg',
+                nombre: 'TENIS 4D RUN',
+                descripcion: 'Running',
+                precio: '$200.990'
+            },
+            {
+                src: 'https://assets.adidas.com/images/w_385,h_385,f_auto,q_auto:sensitive,fl_lossy/42bfd261436f432d9234ab0b00a199ec_9366/tenis-duramo-9.jpg',
+                nombre: 'TENIS DURAMO 9',
+                descripcion: 'Hombre Running',
+                precio: '$219.990'
+            },
+            {
+                src: 'https://assets.adidas.com/images/w_385,h_385,f_auto,q_auto:sensitive,fl_lossy/ee7a6a33491e40968106a99901301b7e_9366/tenis-courtsmash.jpg',
+                nombre: 'productoTENIS COURMASH',
+                descripcion: 'Hombre Sport Inspired',
+                precio: '$190.990'
+            },
+            {
+                src: 'https://assets.adidas.com/images/w_385,h_385,f_auto,q_auto:sensitive,fl_lossy/f50266744a014691bd8daafe00bb6777_9366/tenis-8k-2020.jpg',
+                nombre: 'TENIS 8K 2020',
+                descripcion: 'Hombre Sport Inspired',
+                precio: '$239.990'
+            }
+        ];
+
+        let main = document.getElementById('main');
+
+
+        productos.forEach(prod => {
+            let miProducto = crearProducto(prod.src, prod.nombre, prod.descripcion, prod.precio);
+            console.log(miProducto);
+            main.appendChild(miProducto);
+        });
+    </script>
+
+</body>
+
+</html>

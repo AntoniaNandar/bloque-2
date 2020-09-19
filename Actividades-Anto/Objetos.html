@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>PROGRAMACION ORIENTADA A OBJETOS</h1>
+    <h2>Clase - 5</h2>
+    <script>
+
+//BITÁCORA ------ 
+        /*
+        //SINTAXIS OBJETO
+        let a340 = {peso: 380000, asientos: 359, msj_bienvenida : function(){ return 'Bienvenido a Airbus 380'} }
+        console.log(a340.msj_bienvenida()); 
+
+        //CLASE: AVIONES, OBJETO: a319, a340
+        class Aviones {
+            saludo() {
+                return 'Hola a todos';
+            }
+        }
+        let a319 = new Aviones
+        console.log(a319.saludo()) //Imprime “Hola a todos”
+        let a340 = new Aviones
+        console.log(a340.saludo()) //Imprime “Hola a todos”
+
+        //THIS.
+        class Avion {
+            saludo () {
+                return 'Hola avion ' + this.name
+            }
+        }
+
+        a319 = new Avion 
+        a319.name = 'a319'; 
+        console.log(a319.saludo());
+
+        a340 = new Avion 
+        a340.name = 'a340'; 
+        console.log(a340.saludo());
+
+        //CHALLENGE
+        class Avion {
+    --->        constructor(_name, _aerolinea, _sillas, _tamaño) {
+                this.name = _name;
+                this.aerolinea = _aerolinea;
+                this.sillas = _sillas;
+    --->            this._tamaño = _tamaño;
+            }
+            despegar() {
+                return 'El avion ' + this.name + ' esta por despegar';
+            }
+            aterrizar() {
+                return 'El avion ' + this.name + ' ya aterrizó';
+            }
+        }
+
+        a340 = new Avion 
+        a340.name = 'a340'
+        a340.aerolinea = 'Avianca'
+        a340.sillas = '300'
+        a340.tamaño = 'Mediano';
+
+        console.log(a340.despegar());
+        console.log(a340.name, a340.aerolinea, a340.sillas, a340.tamaño)*/
+
+//CLASE ----
+
+/*
+        //Agregar una nueva propiedad
+        car.fuel = 'Diesel';
+        console.log(car);
+
+        //Llamar una propiedad
+        console.log("Propiedad fuel: " + car.fuel);​
+
+        //Agregar un nuevo método
+        car.sale_title = function () {
+            return `La descripción del vehículo es: ${this.type} ${this.model} - ${this.year}`;
+        };
+        console.log(car);
+
+        //FUNCIONES CONSTRUCTORAS
+
+        function User(name, lastname, password) {
+            this.name = name;
+            this.lastname = lastname;
+            this.password = password;
+            this.admi = false; //valor por defecto
+        }
+        let user1 = new User('Antonia', 'Nandar', '1234');
+        console.log(user1);
+
+        //CREAR CLASE CON CONTRUCTOR (En la clase hay una funcion constructora)
+
+        class Clothe {
+            constructor(size, color, price) {
+                this.size = size;
+                this.color = color;
+                this.price = price;
+            }
+            getinfo() {
+                return `La talla es: ${this.size}, de color ${this.color}, y cuesta ${this.price}`;
+            }
+        }
+
+        let clothes1 = new Clothe('S', 'Blanco', '50p');
+        console.log(clothes1.getinfo());
+
+        //PROGRAMAMOS
+        
+        class Person {
+            constructor(name, lastname, age) {
+                this.name = name;
+                this.lastname = lastname;
+                this.age = age;
+            }
+            fullname() {
+                return `${this.name} ${this.lastname}`
+            }
+            es_mayor() {
+                return (this.age >= 18);
+            }
+        }
+
+        let person1 = new Person ('Antonia', 'Nandar', 18);
+        console.log(person1.fullname());
+        console.log(person1.es_mayor());
+
+        let listaDePersonas = [];
+        listaDePersonas.push(person1);
+
+        //PERRERA
+
+        class Perro {
+            
+            constructor(nombre, raza, edad, peso, estadoAdopcion) {
+                this.nombre = nombre;
+                this.raza = raza;
+                this.edad = edad;
+                this.peso = peso;
+                this.estadoAdopcion = estadoAdopcion;
+            }
+            ladrar() {
+                return `Hola ${this.nombre}`;
+            }
+            getAdopcion() {
+                return this.estadoAdopcion;
+            }
+            setAdopcion() {
+                return this.estadoAdopcion = prompt('Modifica el estado de adopcion');
+            }
+            infoAdopcion() {
+                return `El estado de adopcion de tu perrito es ${this.estadoAdopcion}`
+            }
+        }
+
+        let perro1 = new Perro ('Baxter', 'Pitbull', '3 años', '10kg', 'Adopcion');
+        console.log(perro1);
+        console.log(perro1.ladrar());
+        console.log(perro1.infoAdopcion());
+        console.log(perro1.setAdopcion());
+
+//ALMACIENTO
+
+        var arrayPerros = [];
+        var enAdopcion = 0,
+            enProceso = 0,
+            adoptado = 0;
+
+        class Perro {
+            constructor(nombre, raza, estadoAdopcion) {
+                this.nombre = nombre;
+                this.raza = raza;
+                this.estadoAdopcion = estadoAdopcion;
+            }
+            getEstado() {  
+                if (this.estadoAdopcion == 'en adopcion') {
+                    enAdopcion++;
+                } else if (this.estadoAdopcion == 'en proceso') {
+                    enProceso++;
+                } else if (this.estadoAdopcion == 'adoptado'){
+                    adoptado++;
+                }
+            }
+        }
+
+        function agregarPerro(perritou) {
+            return perrito === true;
+        }
+
+        do {
+            var crearPerro = new Perro(prompt('Nombre:'), prompt('Raza:'), prompt('estado de la adopcion:'));
+            var perrito = confirm("Agrega otro perro");
+            arrayPerros.push(crearPerro);
+            console.log(crearPerro.getEstado());
+        } while (agregarPerro(perrito));
+
+
+        console.log(arrayPerros);  
+        console.log(enAdopcion);
+        console.log(enProceso);
+        console.log(adoptado);*/
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
