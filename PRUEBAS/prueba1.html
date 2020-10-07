@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Prueba menu hamburguesa</h1>
+    <input type="checkbox" id="btnMenu" onclick="check()">
+    <label for="btnMenu"></label>
+
+    <nav>
+        <p id="prueba">Antonia
+        </p>
+
+        <ul id="menuLista">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </nav>
+    <script>
+        function check() {
+            var checked = document.getElementById("btnMenu");
+            var text = document.getElementById("menuLista");
+            if (checked.checked == true) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        }
+
+        /*var menuHamburguesa = document.createElement('li');
+        var menuLi = document.createTextNode('Item1');
+        menuHamburguesa.appendChild(menuLi);
+        document.getElementById('menu').appendChild(menuHamburguesa);*/
+    </script>
+    <style>
+        ul {
+            display: none;
+        }
+    </style>
+
+</body>
+
+</html>
