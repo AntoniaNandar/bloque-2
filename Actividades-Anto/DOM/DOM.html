@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DOM.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--<h1>DOM</h1>
+    <h2>Clase 7</h2>
+    <header id="header">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="bg_red">4</div>
+        <div class="bg_red">5</div>
+    </header>
+    <script>
+        var by_tag = document.getElementsByTagName("div");
+        console.log(by_tag);
+        var by_id = document.getElementById("header");
+        console.log(by_id);
+        var by_class = document.getElementsByClassName("bg_red");
+        console.log(by_class);
+        var by_query = document.querySelector("#header > div:nth-child(2)");
+        console.log(by_query);
+        var by_query = document.querySelector(".bg_red");
+        console.log(by_query); //encuentra solo el 4
+    </script>-->
+    <header>
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <nav>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="heading">
+            <h1>Heading</h1>
+            <p id="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus saepe amet, odit libero sunt
+                voluptas ipsa aperiam sequi doloribus vero impedit assumenda alias eaque quas, reiciendis delectus nihil
+                a omnis.</p>
+        </div>
+        <div class="img_heading">
+            <p>IMG</p>
+        </div>
+    </main>
+    <article>
+        <div class="contenedor" id="conteiner">
+            <section>
+                <p class="img">IMG</p>
+                <h2>Nombre</h2>
+            </section>
+            <section>
+                <p class="img">IMG</p>
+                <h2>Nombre</h2>
+            </section>
+        </div>
+
+        <footer>
+            <section>
+                <p>Ver más</p>
+            </section>
+
+        </footer>
+    </article>
+
+    <div id="msj">
+        Hola a todos
+    </div>
+    <script>
+        var msj = document.getElementById("msj")
+        msj.innerHTML = "Estoy cambiando";
+
+        var parent = document.getElementById('conteiner')//.getElementsByTagName('section')[0];
+        var seccion = document.getElementsByTagName('section')[0];
+        var remove = parent.remove(seccion)
+         parent.appendChild(remove)
+
+        var parrafo = document.getElementsById("p");
+        parrafo.remove();
+
+        //var elemento = document.getElementById()
+    </script>
+
+</body>
+
+</html>

@@ -1,46 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Funciones</h1>
+    <p>Clase 6</p>
     <script>
         // BITÁCORA
         /*const nombres = ['Daniel', 'Sophie', 'Sebas', 'Otto'];
         const numero_caracteres = nombres.map(function(nombre){
             console.log(`${nombre} tiene ${nombre.length} letras`);
-        });*/
+        });
 
-        /*SINTAXIS ARROW FUNCTION 
+        SINTAXIS ARROW FUNCTION 
         (parámetro) => {
             return //código a ejecutar
-        }*/
+        }
 
-        /*const nombres = ['Daniel', 'Sophie', 'Sebas', 'Otto'];
+        const nombres = ['Daniel', 'Sophie', 'Sebas', 'Otto'];
         const numero_caracteres = nombres.map((nombre) => {
             console.log(`${nombre} tiene ${nombre.length} letras`);
         })
 
         const numbers = [1, 2, 3, 4, 5];
-        const variable_numbers = numbers.map(/*suma => suma + 2*//*numero => numero % 2 ? console.log('Par') : console.log('Impar'));
+        const variable_numbers = numbers.map(/*suma => suma + 2*/
+        /*numero => numero % 2 ? console.log('Par') : console.log('Impar'));
 
-        //Changelle -------
+                //Changelle -------
 
-        const example = ['Antonia', 'Nandar', true, {}, 18, 08112002, 'x'];
-        var numero = parseInt(example);
+                const example = ['Antonia', 'Nandar', true, {}, 18, 08112002, 'x'];
+                var numero = parseInt(example);
 
-        const noNumericos = example.map(numero => isNaN(numero) ? console.log(`${numero} no es un numero`) : console.log(`${numero} es un numero`));
+                const noNumericos = example.map(numero => isNaN(numero) ? console.log(`${numero} no es un numero`) : console.log(`${numero} es un numero`));
 
-        console.log(example)*/
+                console.log(example)*/
 
         //CLASE -----
 
+        //.FIND 
+       /* const array1 = [5, 12, 8, 130, 44];
+
+        const found = array1.find(element => element > 10);
+
+        console.log(found); // expected output: 12
+
+        array1.find(variableX => parámetro con el que quiero que lo encuentre);
+
+
+        //Programamos
+
+        let usuarios = [];
+        let cantidadUsuarios = 5;
+
+        let guardarUsuarios = () => {
+            try {
+                let usuario = prompt('Ingrese usuario');
+                let existe = usuarios.find(x => x === usuario);
+                if (!existe) {
+                    usuarios.push(usuario);
+                    alert('Bienvenido usuario')
+                } else {
+                    throw new Error('El usuario ya existe');
+                }
+            } catch (error) {
+                alert(error);
+            }
+        }
+
+        do {
+            guardarUsuarios();
+        } while (usuarios.length < cantidadUsuarios);
+
+        console.log(usuarios);*/
+
+        
+
+        //Programamos
+
+        let usuarios = [];
+        let cantidadUsuarios = 2;
+
+        class User {
+            constructor(name, lastname, password) {
+                this.name = name;
+                this.lastname = lastname;
+                this.password = password;
+            }
+        }
+
+        let manejoUsuarios = () => {
+            try {
+                let usuarioNuevo = new User(prompt('Nombre'), prompt('Apellido'), prompt('Contraseña'));
+                let existe = usuarios(x => x == usuarioNuevo);
+                if(!existe) {
+                    usuarios.push(usuarioNuevo);
+                    alert('Bienvenido')
+                } else {
+                    throw new Error('Este usuario ya existe');
+                }
+            } catch(error) {
+                alert(error);
+            }
+        }
+
+        do {
+            manejoUsuarios();
+        } while (usuarios.length < cantidadUsuarios);
+
+        console.log(usuarios);
+
+
+
+
+
+
+        /*let usuarios = [];
+        let cantidadUsuarios = 2;
+
+        class User {
+            constructor(name, lastname, password) {
+                this.name = name;
+                this.lastname = lastname;
+                this.password = password;
+            }
+        }
+
+        let guardarUsuarios = () => {
+            try {
+                let usuario = new User(prompt('Ingrese nombre'), prompt('Ingrese apellido'), prompt('contraseña'));
+                let existe = usuarios.find(x => x == usuario);
+                if (!existe) {
+                    usuarios.push(usuario);
+                    alert('Bienvenido usuario')
+                } else {
+                    throw new Error('El usuario ya existe');
+                }
+            } catch (error) {
+                alert(error);
+            }
+        }
+
+        do {
+            guardarUsuarios();
+        } while (usuarios.length < cantidadUsuarios);
+
+        console.log(usuarios);*/
 
 
         
+        
+        
+        
+
+        
+
+        
+        //Diametro de un círculo
+
+        /*let radio = parseFloat(prompt('Ingrese el valor del radio de un círculo'));
+
+        function diametroirculo(x) {
+            return 2 * x;
+        }
+
+        function calcularCircunferencia(x) {
+            return diametroirculo(x) * Math.PI;
+        }*/
+    </script>
     </script>
 </body>
+
 </html>

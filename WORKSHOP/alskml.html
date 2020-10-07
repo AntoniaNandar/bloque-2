@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="objeto">
+
+    </div>
+    <script src="script.js"></script>
+
+    <div class="header">
+        Chuck Norris.io
+    </div>
+
+    <div class="content">
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="#newsOne">News #1</a></li>
+                <li><a href="#newsTwo">News #2</a></li>
+                <li><a href="#newsThree">News #3</a></li>
+                <li><a href="#Yarntown">News #4</a></li>
+            </ul>
+
+        </div>
+        <div class="article">article
+            <div class="news">
+                <h1 class="title" id="newsOne">News 1</h1>
+                <img src="images/chucknorris_logo.png" alt="News1" width="" height="">
+                <p id="elemento_1">
+
+
+                </p>
+                <hr>
+            </div>
+            <div class="news">
+                <h2 class="title" id="newsTwo">
+                    News 2
+                </h2>
+                <img src="images/chucknorris_logo.png" alt="metacritic" width="" height="">
+                <p></p>
+                <hr>
+            </div>
+            <div class="news">
+                <h2 class="title" id="newsThree">
+                    News 3
+                </h2>
+                <img src="images/chucknorris_logo.png" alt="News2" width="" height="">
+                <p></p>
+                <hr>
+            </div>
+            <div class="news">
+                <h2 class="title" id="newsFour">
+                    News 4
+                </h2>
+                <img src="images/chucknorris_logo.png" alt="News3" width="" height="">
+                <p></p>
+
+                <hr>
+            </div>
+        </div>
+        <div class="aside">aside</div>
+    </div>
+
+    <div class="footer">
+        footer
+    </div>
+    <script>
+        let y = fetch('https://api.chucknorris.io/jokes/random')
+            .then(x => x.json())
+            .then(datos => {
+                //El código para insertar lo que se quiere en el HTML
+                let elemento_1 = document.getElementById("elemento_1")
+                console.log(datos)
+            });
+    </script>
+    <script>
+        let y = fetch('https://api.chucknorris.io/jokes/random')
+            .then(x => x.json())
+            .then(datos => {
+                //El código para insertar lo que se quiere en el HTML
+                let elemento_1 = document.getElementById("elemento_1");
+                elemento_1.innerHTML = datos.value;
+                console.log(datos)
+            });
+    </script>
+
+
+
+
+
+</body>
+
+</html>
