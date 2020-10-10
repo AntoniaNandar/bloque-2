@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>DOMMMM</h1>
+    <p id="id">Buscar Dom con id</p>
+    <p class="class">Buscar Dom con class</p>
+    <p>Buscar Dom</p>
+    <p class="class">Buscar Dom</p>
+    <p>Buscar
+        <span id="negrilla">Dom</span></p>
+    <p>Buscar Dom</p> <br>
+
+    <h2 id="oldId">cambiar id</h2><br>
+
+    <input type="text" id="input" name="inputName" value="cualquier cosa">
+
+    <ul id="lista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <img src="https://via.placeholder.com/300.png/09f/fff
+
+    C/O https://placeholder.com/" alt="placeholder" id="placeholder">
+
+    <div id="crearElemento"></div>
+
+    <ul>
+        <li>1 Iteam</li>
+        <li id="removeLi">2 Item</li>
+        <li>3 Item</li>
+    </ul>
+
+    <ul id="list">
+        <li>item 1</li>
+        <li id="replace">item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+
+    </ul>
+
+
+
+
+    <script>
+        
+        //CLASE
+
+        //Programamos
+        //Seleccion de nodos:
+
+        let id = document.getElementById('id');
+        console.log(id)
+        id.style.color = 'red';
+        id.style.textTransform =
+            'uppercase'; //Mala practica, usar getAttribute para colocar clase y desde css modificala
+
+        let parrafos = document.getElementsByTagName(
+            'p'); //Esto ya se convierte en un ?arreglo? porque son varios parrafos 
+        console.log(parrafos);
+        for (let i = 0; i < parrafos.length; i++) {
+            parrafos[i].style.border = '1px solid blue' // parrafos[i] en la posicion iecima. recorre todos los i 
+        }
+
+        let parrafosConClase = document.getElementsByClassName('class');
+        for (let i = 0; i < parrafosConClase.length; i++) {
+            parrafosConClase[i].style.border = '5px solid red'
+        }
+
+        let negrilla = document.querySelector('p #negrilla');
+        negrilla.style.background = 'violet';
+
+        //ver y cambiar id 
+
+        let oldId = document.getElementById('oldId');
+        console.log(oldId.id) // .id muetra el nombre del id
+        oldId.id = 'newId'
+        console.log(oldId.id)
+
+        //cambiar value de input
+
+        var input2 = document.getElementsByName('inoutName');
+        console.log(input.value)
+        input.value = 'Nuevo value'
+        console.log(input.value)
+
+        //modificar nodos hijos 
+
+        let lista = document.getElementById('lista');
+        console.log(lista.firstElementChild);
+        lista.firstElementChild.innerHTML = 'nuevo nombre del Item'
+
+        lista.lastElementChild.outerHTML = '<h3>Nuevo h3</h3>'
+
+        //let lisatLi = document.getElementsByTagName('li');
+        //console.log(lisatLi)
+
+        //for (let i = 0; i < lisatLi.length; i++) {
+            //lisatLi[i].style.border = '5px solid red'
+        //}
+
+        console.log(lista.childNodes)
+
+        //Modificar NODOS
+
+        //Modificar atributos de un nodo
+        let imagenAtributo = document.getElementById('placeholder')
+        imagenAtributo.setAttribute('src', 'https://via.placeholder.com/468x60?text=Visit+Blogging.com+NowC/O https://placeholder.com/');
+
+        //crear elemento
+
+        let crearElemento = document.createElement('h5');
+        crearElemento.textContent = 'Primer parrafo creado';
+        let getCrearElemento = document.getElementById('crearElemento');
+        getCrearElemento.appendChild(crearElemento) //agrega un hijo
+
+        let crearElemento2 = document.createElement('h5');
+        crearElemento2.textContent = 'Segundo parrafo creado';
+        crearElemento.before(crearElemento2);
+
+        let crearElemento3 = document.createElement('h5');
+        crearElemento3.textContent = 'Tercer parrafo creado';
+        crearElemento.after(crearElemento3)
+
+        let crearElemento4 = document.createElement('h5');
+        crearElemento4.textContent = 'Cuarto parrafo creado';
+        getCrearElemento.insertBefore(crearElemento4, crearElemento2)
+
+        //remover nodo
+
+        let remove = document.getElementById('removeLi');
+        remove.remove();
+
+        //remplazar nodo
+
+        let replace = document.createElement('li')
+        replace.textContent = 'Nuevo texto remplazado';
+        let replaceLi = document.getElementById('replace');
+        replaceLi.replaceWith(replace);
+
+
+
+
+        //LOCAL STORAGE---- Funciona permanentemnte atra vez del tiempo 
+        // setItem,, getItem, removeItem
+        localStorage.setItem('nombre', 'Harry') //tipo de atributo y valor
+        localStorage.removeItem('nombre');
+        localStorage.setItem('nombreCompleto', 'Harry Potter');
+        console.log('El nombre alojado en el localstorege es: ' + localStorage.getItem('nombreCompleto'))
+
+        //SESSION STORAGE--- Funcina miestras esté iniciada la secion del navegador
+        //setItem,, getItem, removeItem
+
+        sessionStorage.setItem('nombre', 'Antonia') //tipo de atributo y valor
+        sessionStorage.removeItem('nombre');
+        sessionStorage.setItem('nombreEntero', 'Antonia Nandar');
+        console.log('El nombre alojado en el sessionstorege es: ' + sessionStorage.getItem('nombreEntero'))
+
+        
+
+    </script>
+</body>
+
+</html>

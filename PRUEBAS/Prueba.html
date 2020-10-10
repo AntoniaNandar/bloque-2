@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Prueba carrusel</h1>
+
+    <button id="btn1">Atras</button>
+    <div id="conteiner">
+        <div id="div"></div>
+        <img alt="img" id="imagen">
+        <img alt="img" id="imagen2" style="border-radius: 20%;">
+        <img alt="img" id="imagen3" style="border-radius: 40%;">
+        <img alt="img" id="imagen4" style="border-radius: 60%;">
+        <img alt="img" id="imagen5" style="border-radius: 100%;">
+    </div>
+    <button id="btn2">Adelante</button>
+    <script>
+        /*var trending = [];
+
+        class Gif {
+            constructor(img, nombre) {
+                this.img = img;
+                this.nombre = nombre;
+            }
+            getname() {
+                return this.name
+            }
+            getImg() {
+                return this.img
+            }
+        }
+
+        let img1 = prompt('src img')
+        let nommbre1 = prompt('nombre')
+
+        let crearGif = new Gif(img1, nommbre1);
+        let segundoGif = new Gif('scd', 'csdcv');
+        let tercerGif = new Gif('vsfv', 'sdfv');
+
+        var create = trending.push(crearGif);
+        var create = trending.push(segundoGif);
+        var create = trending.push(tercerGif);
+        console.log(trending);
+
+        let div = document.getElementById('div');
+        let conteiner = document.getElementById('conteiner');
+
+
+        funcionImagen = () => {
+            let imagen = document.getElementById('imagen')
+            imagen.setAttribute('src', añadirImg())
+        }
+
+        añadirImg = () => {
+            Object.values(trending[0]);
+        }*/
+
+
+
+        /*let crearElemento = document.createElement('div');
+        crearElemento.innerHTML = Object.values(trending[0]);
+        div.appendChild(crearElemento); Accdeer propiedaadaes de objeto para usarlas en el dom*/
+
+
+
+
+
+
+        //crear objeto ->
+        /*function crearObjeto(a, b) {
+            return new Gif(a, b);
+        }
+
+        function pushArray(c){
+            
+        }
+
+        let objeto1 = crearObjeto(img1, nommbre1);
+        let objeto2 = crearObjeto('asd', 'addac');
+        let objeto3 = crearObjeto('addd', 'adc');
+        
+
+        console.log(objeto1)*/
+
+
+
+        /*function prueba(a, b) {
+            return a + b 
+        }
+        var y = prueba(2, 7)
+        console.log(y);*/
+
+        var trending = [];
+
+        class Gif {
+            constructor(img, nombre) {
+                this.img = img;
+                this.nombre = nombre;
+            }
+            getname() {
+                return this.name
+            }
+            getImg() {
+                return this.img
+            }
+        }
+
+        var objeto1 = new Gif(
+            'https://via.placeholder.com/468x60?text=Visit+Blogging.com+NowC/O https://placeholder.com/', 'Gatito');
+        var objeto2 = new Gif(
+            'https://via.placeholder.com/468x60?text=Visit+Blogging.com+NowC/O https://placeholder.com/', 'Gatito2');
+        var objeto3 = new Gif(
+            'https://via.placeholder.com/468x60?text=Visit+Blogging.com+NowC/O https://placeholder.com/', 'Gatito3');
+        var objeto4 = new Gif(
+            'https://via.placeholder.com/468x60?text=Visit+Blogging.com+NowC/O https://placeholder.com/', 'Gatito4');
+        var objeto5 = new Gif(
+            'https://via.placeholder.com/468x60?text=Visit+Blogging.com+NowC/O https://placeholder.com/', 'Gatito5');
+        trending.push(objeto1);
+        trending.push(objeto2);
+        trending.push(objeto3);
+        trending.push(objeto4);
+        trending.push(objeto5);
+
+        trending.forEach(element => console.log(
+        element)); //return dentro de for each = que cada uno se muestre en el dom
+
+
+        let imagen = document.getElementById('imagen');
+        imagen.setAttribute('src', objeto1.img);
+
+
+        let imagen2 = document.getElementById('imagen2');
+        imagen2.setAttribute('src', objeto2.img);
+
+        let imagen3 = document.getElementById('imagen3');
+        imagen3.setAttribute('src', objeto1.img);
+
+        let imagen4 = document.getElementById('imagen4');
+        imagen4.setAttribute('src', objeto1.img);
+
+        let imagen5 = document.getElementById('imagen5');
+        imagen5.setAttribute('src', objeto1.img);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //carrusel
+
+        let crearElemento = document.createElement('h5');
+        crearElemento.textContent = 'Primer parrafo creado';
+        let getCrearElemento = document.getElementById('crearElemento');
+        getCrearElemento.appendChild(crearElemento) //agrega un hijo
+
+        let crearElemento2 = document.createElement('h5');
+        crearElemento2.textContent = 'Segundo parrafo creado';
+        crearElemento.before(crearElemento2);
+
+        let crearElemento3 = document.createElement('h5');
+        crearElemento3.textContent = 'Tercer parrafo creado';
+        crearElemento.after(crearElemento3)
+
+        let crearElemento4 = document.createElement('h5');
+        crearElemento4.textContent = 'Cuarto parrafo creado';
+        getCrearElemento.insertBefore(crearElemento4, crearElemento2)
+
+        //remplazar nodo
+
+        let replace = document.createElement('li')
+        replace.textContent = 'Nuevo texto remplazado';
+        let replaceLi = document.getElementById('replace');
+        replaceLi.replaceWith(replace);
+    </script>
+</body>
+
+</html>

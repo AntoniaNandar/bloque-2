@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1 id="title">Prueba darck mode</h1>
+    <!---
+    <input type="checkbox" name="checkbox" id="btn-darckMode">
+    <label for="btn-darckMode"></label>
+
+    <script>
+        var toogle = document.querySelector('input[name=checkbox]');
+        toogle.addEventListener('change', function () {
+            if ((this.toogle)) {
+                trans()
+                document.documentElement.setAttribute('daata-theme', 'darck')
+            } else {
+                trans()
+                document.documentElement.setAttribute('daata-theme', 'light')
+
+            }
+        })
+
+        let trans = () => {
+            document.documentElement.classList.add('transicion');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transicion')
+            }, 1000)
+        }
+    </script>
+
+    <style>
+        html {
+            background: skyblue;
+        }
+
+        html[data-theme='dark'] {
+            background: slategray;
+        }
+    </style>-->
+    <input type="checkbox" id="btnMenu" onclick="check()">
+    <label for="btnMenu"></label>
+
+    <script>
+        function check() {
+            let darckModeBody = document.querySelector('body');
+            let darckModeColor = document.getElementById('title');
+            var checkedBox = document.getElementById("btnMenu");
+            //var text = document.getElementById("menuLista");
+
+            if (checkedBox.checked == true) {
+                darckModeBody.setAttribute('class', 'darkModeBody')
+                darckModeColor.setAttribute('class', 'darkModeColor')
+            } else {
+                darckModeBody.removeAttribute('class'); 
+                darckModeColor.removeAttribute('class'); 
+            }
+        }
+    </script>
+    <style>
+        .darkModeBody {
+            background-color: gray;
+        }
+        .darkModeColor {
+            color: white;
+        }
+    </style>
+
+
+</body>
+
+</html>

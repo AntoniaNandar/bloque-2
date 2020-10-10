@@ -30,7 +30,6 @@ header{
 
 .img_heading {
     border: 1px solid black;
-    padding: 3em 9em;
     border-radius: 10px;
     margin: 2em;
 }
@@ -94,3 +93,7 @@ section > h2 {
     display: flex;
     justify-content: space-around;
 }*/
+
+.darkModeBody {
+    background: lightblue;
+}

@@ -35,7 +35,7 @@
             <p>Logo</p>
         </div>
         <nav>
-            <ul>
+            <ul id="list">
                 <li>Item 1</li>
                 <li>Item 2</li>
                 <li>Item 3</li>
@@ -46,23 +46,25 @@
     <main>
         <div class="heading">
             <h1>Heading</h1>
-            <p id="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus saepe amet, odit libero sunt
+            <p id="p">Lorem ipsum, <span id="negrilla">dolor</span> sit amet consectetur adipisicing elit. Temporibus
+                saepe amet, odit libero sunt
                 voluptas ipsa aperiam sequi doloribus vero impedit assumenda alias eaque quas, reiciendis delectus nihil
                 a omnis.</p>
         </div>
         <div class="img_heading">
-            <p>IMG</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSDRlkRDrzkNXFSocyB5oXbGqqYhMDr2EvZ4w&usqp=CAU"
+                alt="img" id="img">
         </div>
     </main>
     <article>
         <div class="contenedor" id="conteiner">
             <section>
                 <p class="img">IMG</p>
-                <h2>Nombre</h2>
+                <h2 id="img1">Nombre 1</h2>
             </section>
             <section>
                 <p class="img">IMG</p>
-                <h2>Nombre</h2>
+                <h2 id="img2">Nombre 2</h2>
             </section>
         </div>
 
@@ -72,25 +74,143 @@
             </section>
 
         </footer>
+        <button onclick="clearInterval(time)">Parar</button>
     </article>
 
-    <div id="msj">
-        Hola a todos
-    </div>
+    <div id="cuadroDatos"></div>
     <script>
-        var msj = document.getElementById("msj")
+        var numeros = ['5', '4', '3', '2', '0'];
+
+        /*for (x in numeros) {
+            console.log(numeros[x]);
+        }
+
+        var time = setInterval(counter, 800);
+        contador = 0;
+
+
+        function counter() {
+            for (x in numeros) {
+                console.log(numeros[x]);
+            }
+            for (i = 0; i <= 3; i++) {
+                console.log(numeros[i]);
+            }
+
+            console.log(numeros[contador++])
+        }*/
+
+        
+        /*var time = setInterval(counter, 800);
+        contador = 0;
+
+        function counter() {
+            console.log('1')
+        }*/
+
+
+
+
+
+
+
+
+
+
+        //CHALLENGE
+        /*var msj = document.getElementById("msj")
         msj.innerHTML = "Estoy cambiando";
 
-        /*var parent = document.getElementById('conteiner')//.getElementsByTagName('section')[0];
+        --->var parent = document.getElementById('conteiner')//.getElementsByTagName('section')[0];
         var seccion = document.getElementsByTagName('section')[0];
         var remuve = parent.remove(seccion)
-        // parent.appendChild(remove)*/
+        // parent.appendChild(remove)
 
         var parrafo = document.getElementsById("p");
         parrafo.remove();
+       //var elemento = document.getElementById()*/
 
-        //var elemento = document.getElementById()
+        //PROGRMAMOS
+
+        /*var datosPersona = []
+
+        class Person {
+            constructor(name, lastname, backgroundColor, fontColor, fontSize) {
+                this.name = name;
+                this.lastname = lastname;
+                this.backgroundColor = backgroundColor;
+                this.fontColor = fontColor;
+                this.fontSize = fontSize;
+            }
+            getName() {
+                return this.name;
+            }
+            getLastname() {
+                return this.lastname;
+            }
+            getBackground() {
+                return this.backgroundColor;
+            }
+            getFontColor() {
+                return this.fontColor;
+            }
+            getFontSize() {
+                return this.fontSize;
+            }
+        }
+
+        var persona = new Person(prompt('nombre'), prompt('apellido'), prompt('color de background'), prompt(
+            'Font Color'), prompt('Font size'));
+        datosPersona.push(persona);
+        console.log(datosPersona);
+
+        let crearNombre = document.createElement('string');
+        crearNombre.textContent = persona.getName()
+        let cuadroDatos = document.getElementById('cuadroDatos');
+        cuadroDatos.appendChild(crearNombre);
+
+        let crearLastname = document.createElement('string');
+        crearLastname.textContent = persona.getLastname();
+        crearNombre.after(crearLastname);
+        
+        let background = document.getElementById('cuadroDatos');
+        background.style.background = persona.getBackground();
+
+
+        let fontColor = document.getElementById('cuadroDatos');
+        fontColor.style.color = persona.getFontColor();
+
+
+        let fontSize = document.getElementById('cuadroDatos');
+        fontSize.style.fontSize = persona.getFontSize();
+
+        //AGREGAR ITEM 
+        let list = document.createElement('li');
+        list.textContent = 'Item 5';
+        let getList = document.getElementById('list');
+        getList.appendChild(list)
+
+        //AGREGAR NEGRITA
+
+        let negrilla = document.getElementById('negrilla');
+        negrilla.style.fontWeight = 'bold'
+
+        var time = setTimeout(bye, 3000);
+
+        console.log('hello');
+
+        function bye(){
+            console.log('goodbay');
+        }
+*/
+        //CAMBIAR ORDEN
+
+
+        
     </script>
+    <style>
+
+    </style>
 
 </body>
 

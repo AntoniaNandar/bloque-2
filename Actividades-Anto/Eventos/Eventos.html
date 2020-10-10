@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Eventos</h1>
+    <h2>Clase 8</h2>
+
+    <!--<input type="checkbox" id="btn">
+    <label for="btn"></label>
+    <script>
+        let nodo = document.getElementById("btn");
+        nodo.addEventListener("click", msj => alert("Hola"));
+
+        nodo.removeEventListener("click", callback);
+
+    </script>-->
+
+    <input type="text" name="btn" id="input">
+    <label for="input"></label>
+
+    <button id="btn">Click</button>
+
+    <p id="demo"></p>
+
+
+    <h2><strong>EVENTOS</strong></h2>
+
+    <div id="div2" class="div">Dobel click</div>
+    <div id="div1" class="div">Click</div>
+
+
+    <input type="button" id="createBox" value="crear">
+    <input type="button" id="removeBox" value="borrar">
+    <div id="conteiner"></div>
+
+
+    <input type="text" id="inputLi">
+    <button id="botonLi">Presionar</button>
+    <ul id="createLi">
+        <li>Item inicial</li>
+    </ul>
+
+    <div id="logo">logo</div>
+
+    <h1 id="heading">Heading</h1>
+
+    <div id="contenedordiv">
+        <div id="verMas">
+            <img src="#" alt="img">
+            <p>Nombre</p>
+        </div>
+        <button id="btnVermas">Ver más</button>
+    </div>
+
+
+    <script>
+        /*var btn = document.getElementById('btn');
+        var input = document.getElementById('input')
+
+        btn.addEventListener('click', mostrar => {
+            var x = input.value;
+            //document.getElementById("demo").innerHTML = x;
+            alert('Hola ' + x);
+        });*/
+
+        //CHALLENGE
+
+        /*var btn = document.getElementById('btn');
+        var input = document.getElementById('input')
+
+        btn.addEventListener('click', mostrar => {
+            if (x = '_') {
+                input.style.background = 'blue'
+            } else {
+                var x = input.value;
+                //document.getElementById("demo").innerHTML = x;
+                alert('Hola ' + x);
+            }
+        });*/
+
+        //CLASE
+        let primerDiv = document.getElementById('div1');
+        primerDiv.addEventListener('click', () => {
+            primerDiv.classList.toggle("color")
+        });
+
+        //no usar este let segundoDiv = document.getElementById('div2');
+        /*div2.onclick = () => {
+            segundoDiv.classList.toogle('color')
+        }*/
+
+        //removeEventLister
+        let create = document.getElementById('createBox');
+        let remove = document.getElementById('removeBox')
+        let boxbtn = document.getElementById('conteiner')
+
+        create.addEventListener('click', createBox, false);
+
+        remove.addEventListener('click', () => {
+            create.removeEventListener('click', createBox, false)
+        })
+
+        function createBox() {
+            let box = document.createElement('div')
+            box.classList.add('div');
+            boxbtn.appendChild(box);
+        }
+
+        //PROGRAMAMOS
+
+        //aparecer y desaparecer nodo
+        var botonLi = document.getElementById('botonLi');
+        let inputLI = document.getElementById('inputLi');
+        let createLi = document.getElementById('createLi');
+
+
+
+        insertar = () => {
+            let texto = inputLI.value;
+            let elemento = document.createElement('li');
+            elemento.innerHTML = texto; //elemento.innerHTML = input.value
+            createLi.appendChild(elemento);
+        }
+
+
+        botonLi.addEventListener('click', insertar);
+        inputLI.addEventListener('keyup', (evento) => {
+            if (evento.keyCode === 13) {
+                insertar();
+            }
+        })
+
+        //PROGRAMAN
+
+        //Mouseover
+        let logo = document.getElementById('logo');
+        logo.addEventListener('mouseover', () => {
+            logo.style.border = "5px solid black";
+        })
+
+        logo.addEventListener('mouseout', () => {
+            logo.style.border = "none";
+        })
+
+        //remplazar titulo
+        var prueba = ['Antonia', 'Nandar', 'Ramos'];
+
+        let heading = document.getElementById('heading');
+        heading.addEventListener('click', () => {
+            var newHeading = prompt('Ingresa el nuevo titulo que quieres');
+            if (true) {
+                heading.innerHTML = (newHeading);
+                localStorage.setItem('nuevoHeading', newHeading);
+
+            }
+        })
+
+        localStorage.setItem('item Prueba', prueba);
+        localStorage.removeItem('item Prueba');
+        localStorage.removeItem('nuevoHeading');
+
+        //ver mas
+
+        let verMas = document.getElementById('verMas');//QUITAR LASTCHOLD
+        let btnVermas = document.getElementById('btnVermas');
+        let contenedordiv = document.getElementById('contenedorDiv')
+
+        /*btnVermas.addEventListener('click', () =>{
+            let createDiv = verMas.cloneNode(true);
+            verMas.appendChild(createDiv);
+        }) GIFOS*/
+
+        btnVermas.addEventListener('click', () =>{
+            let createDiv = verMas.cloneNode(true);
+            verMas.appendChild(createDiv);
+        })
+
+
+    </script>
+    <style>
+        .div,
+        #verMas {
+            height: 200px;
+            width: 200px;
+            background: violet;
+            margin-bottom: 20px;
+            color: white;
+            border-radius: 100%;
+            text-align: center;
+        }
+
+        .color {
+            background: violet;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -9,30 +9,60 @@
 
 <body>
     <h1>Prueba menu hamburguesa</h1>
-    <input type="checkbox" id="btnMenu" onclick="check()">
-    <label for="btnMenu"></label>
+    <!--<input type="checkbox" id="btnMenu" onclick="check()">-->
+    <input type="checkbox" id="btn">
+    <label for="btn"></label>
 
     <nav>
         <p id="prueba">Antonia
         </p>
 
         <ul id="menuLista">
-            <li>Item 1</li>
-            <li>Item 2</li>
+            <li>Modo nocturno</li>
+            <li>Fav</li>
             <li>Item 3</li>
             <li>Item 4</li>
         </ul>
     </nav>
     <script>
-        function check() {
-            var checked = document.getElementById("btnMenu");
+        //OPCION 1
+        /*let btn = document.getElementById("btn");
+        btn.addEventListener("click", check = () => {
             var text = document.getElementById("menuLista");
-            if (checked.checked == true) {
+            if (btn.checked == true) {
                 text.style.display = "block";
+
+            } else {
+                text.style.display = "none";
+            }
+        });*/
+
+        //OPCION 2
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", check);
+
+        function check() {
+            var text = document.getElementById("menuLista");
+            if (btn.checked == true) {
+                text.style.display = "block";
+
             } else {
                 text.style.display = "none";
             }
         }
+
+        //OPCION 3
+
+
+        /*function check() {
+            var checkedBox = document.getElementById("btnMenu");
+            var text = document.getElementById("menuLista");
+            if (checkedBox.checked == true) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        }*/
 
         /*var menuHamburguesa = document.createElement('li');
         var menuLi = document.createTextNode('Item1');
