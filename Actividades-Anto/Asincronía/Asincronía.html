@@ -1,12 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>ASINCRONIA</h1>
     <h2>Clase 9</h2>
+
+    <script>
+//CLASE        
+        function getName(callback) {
+            let name = prompt('Ingresa tu nombre');
+            callback(name);
+        }
+
+        function sayHi(name) {
+            alert('Hola ' + name)
+        }
+        getName(sayHi);
+        //getName(name => alert(`Hola ${name}`)); LO MISMO PERO EN FUNCINO FLECHA(Pero esta función no se puede reutilizar)
+
+        //Calculadora con   callback: suma y resta 
+        let suma = (n1, n2) => n1 + n2;
+        let resta = (n1, n2) => n1 - n2;
+        let promedio = (n1, n2) => (n1 + n2) / 2;
+
+        let calculadora = function (n1, n2, callback) {
+            return callback(n1, n2);
+        }
+
+        console.log(calculadora(7, 5, suma));
+        console.log(calculadora(7 ,5, suma));
+        console.log(calculadora(1, 10, promedio));
+
+        //Sort en Array de numeros SORT(con que politica los quiero ordenar)<--- osea un callback adentro
+        let numeros = [10, 12, 15, 23, 2];
+        numeros.sort();
+        /*console.log(numeros.sort((a, b) => {
+            if (a > b) return 1;
+            else if (a < b) return -1;
+            else return 0;
+        }))*/
+        console.log(numeros.sort((a, b) =>{
+            return a- b;
+        }));
+
+        //Sort normal de un objeto
+
+        let productos = [];
+        productos.push({nombre: 'Remera', precio: 100});
+        productos.push({nombre: 'Pantalon', precio: 800});
+        productos.push({nombre: 'Camisa', precio: 500});
+        productos.sort();
+        console.log(productos);
+
+        //Sort con callback propio para generar orden en la propiedad nombre
+
+        let productos2 = [];
+        productos2.push({nombre: 'Remera', precio: 100});
+        productos2.push({nombre: 'Pantalon', precio: 800});
+        productos2.push({nombre: 'Camisa', precio: 500});
+
+        productos2.sort(function(objeto1, objeto2) {
+            if(objeto1.nombre < objeto2.nombre) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }); //Politica con la que se ordenan los nombres (alfabéticamente) 
+        console.log(productos2);
+
+
+        //Sort con callback propio para generar orden en la propiedaad precio
+
+        let productos3 = [];
+        productos3.push({nombre: 'Remera', precio: 100});
+        productos3.push({nombre: 'Pantalon', precio: 800});
+        productos3.push({nombre: 'Camisa', precio: 500});
+
+        productos3.sort(function(objeto1, objeto2) {
+            if(objeto1.precio < objeto2.precio) {
+                return -1;
+            } else {
+                return 1;
+            }
+        });
+        console.log(productos3);
+
+        //PROGRAMAMOS
+        //retardo
+
+        setTimeout(function functionOne(){
+            console.log('1')
+        },100)
+
+        console.log('2');
+
+        //Animales
+        /*let animales = [];
+        animales.push({animal: 'vaca', ruido: 'mu'})
+        animales.push({animal: 'perro', ruido: 'woof'})
+        animales.push({animal: 'gato', ruido: 'miau'})
+
+        function hacerRuido(animal, ruido){
+            console.log(`La ${animal} hace ${ruido}`)
+        }
+
+        hacerRuido(animales.animal, animales.ruido)*/ //Intento fallido
+
+        let perro = {nombre: 'Perro', sonido: function() {return('woof')}};
+        let gato = {nombre: 'gato', sonido: function() {return('miau')}};
+        let vaca = {nombre: 'vaca', sonido: function() {return('muu')}};
+
+        function hacerRuido(nombreAnimal, sonido) {
+            console.log(`El animal ${nombreAnimal} hace ${sonido()}`);
+        }
+
+        hacerRuido(perro.nombre, perro.sonido);
+        hacerRuido(gato.nombre, gato.sonido);
+        hacerRuido(vaca.nombre, vaca.sonido);
+    
+        
+
+
+
+
+
+
+        
+
+    </script>
 </body>
+
 </html>
